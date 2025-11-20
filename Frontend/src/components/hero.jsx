@@ -1,5 +1,5 @@
 import { AiOutlineDownload } from "react-icons/ai";
-import resume from '../assets/Ahmed-Ossama-CV.pdf';
+import resume from '../assets/Ahmed-Ossama-Full-stack-Developer-CV.pdf';
 
 
 const HeroSection = () => {

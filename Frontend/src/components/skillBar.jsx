@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import {
     FaHtml5,
     FaCss3Alt,
@@ -37,31 +37,23 @@ const icons = [
 export default function SkillBar() {
     const trackRef = useRef(null);
 
-    // Ensure the inner track is wide enough for a smooth loop.
-    // We duplicate the icons list in render which is usually enough.
-    useEffect(() => {
-        // no runtime logic required for basic duplicate-approach,
-        // but leave hook if you want to compute width-based speed later.
-    }, []);
 
     return (
         <>
-            {/* inline styles for keyframes + pause-on-hover */}
-            <style>{`
-        /* animation that moves the track left by 50% (because we duplicate items) */
-        @keyframes scroll-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        
-        .skill-track {
-          animation: scroll-left ${SPEED_SECONDS}s linear infinite;
-          animation-play-state: running;
-        }
-        .skill-track:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+        <style>{`
+            @keyframes scroll-left {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            
+            .skill-track {
+                animation: scroll-left ${SPEED_SECONDS}s linear infinite;
+                animation-play-state: running;
+            }
+            .skill-track:hover {
+                animation-play-state: paused;
+            }`}
+        </style>
 
             <div className="w-full py-3 mb-5">
                 <div className="max-w-screen-xl mx-auto overflow-hidden">
@@ -73,7 +65,6 @@ export default function SkillBar() {
                         role="list"
                         style={{ gap: "5rem" }}
                     >
-                        {/* render duplicated icons for infinite effect */}
                         {[...icons, ...icons].map((ic, idx) => {
                             const Icon = ic.Comp;
                             return (

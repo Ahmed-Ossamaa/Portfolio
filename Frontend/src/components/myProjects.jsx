@@ -4,7 +4,7 @@ const ProjectsSection = () => {
         {
             title: "E-Commerce Platform",
             description: "SPA e-commerce solution with user authentication, Admin dashboard (Management and Stats), using only Vanilla JS. (No Frameworks)",
-            tech: ["JS", "HTML5", "CSS3","Bootstrap"],
+            tech: ["JS", "HTML5", "CSS3", "Bootstrap"],
             github: "https://github.com/Ahmed-Ossamaa/Ecommerce-ITI-Vanilla-js",
             demo: "https://e-commerce-iti-delta.vercel.app/",
             image: "https://plus.unsplash.com/premium_photo-1664201890375-f8fa405cdb7d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
@@ -12,18 +12,25 @@ const ProjectsSection = () => {
         {
             title: "Book Tracker",
             description: "Book tracking app with full CRUD operations and JWT auth and pagination. Admin Dashboard featuring role-based access control for user and book management",
-            tech: ["React","Node.js" ,"Express", "MongoDB", "JWT","Tailwind CSS", "cloudinary"],
+            tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS", "cloudinary"],
             github: "https://github.com/Ahmed-Ossamaa/book-tracker",
             demo: "https://book-tracker-delta-pearl.vercel.app/",
             image: "booktracker.jpeg"
         },
         {
             title: "Skill-up",
-            description: "Goal tracking app with user authentication and goal management features. implementing OOP and SOLID principles.",
+            description: "Learning platform with full CRUD operations and JWT auth and pagination.Admin, Intstuctor, Student Dashboard featuring role-based access control",
             tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "MUI", "cloudinary"],
             github: "https://github.com/Ahmed-Ossamaa/skill-up",
             demo: "#",
             image: "skillUp.jpg"
+        },
+        {
+            title: "Nala Automotive",
+            description: "Car resale platform with full CRUD operations and JWT auth and pagination.Admin, Intstuctor, Student Dashboard featuring role-based access control",
+            tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS", "React-Query", "Zod", "cloudinary"],
+            demo: "https://nala-automotive.vercel.app/",
+            image: "Nala-auto.png"
         }
     ];
 
@@ -39,6 +46,10 @@ const ProjectsSection = () => {
                     ))}
                 </div>
             </div>
+            <p className="mt-10 text-center font-medium text-red-500">
+                Note: You may need to get Admin credentials to access the Admin Dashboard for some projects,
+                So please check the repo on github to get the credentials.
+            </p>
         </section>
     );
 };

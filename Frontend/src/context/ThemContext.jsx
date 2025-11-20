@@ -23,7 +23,6 @@ export const ThemeProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('theme', darkMode ? 'dark' : 'light');
 
-        // Apply to document root for Tailwind v4
         const root = document.documentElement;
         if (darkMode) {
             root.classList.add('dark');
