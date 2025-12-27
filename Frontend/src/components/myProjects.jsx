@@ -2,33 +2,53 @@ import ProjectCard from "./projectCards";
 const ProjectsSection = () => {
     const projects = [
         {
+            title: "Skill-Up (Full-Stack)",
+            description: `A Full-stack education platform.
+            Key technical implementations include JWT auth with role-based authorization (RBAC),
+            an optimized video delivery system for lessons, and automated email services for account security.
+            Stripe Payment Integration.
+            The platform also features 3 Dashboards for instructors, students, and admins. each dashboard has its own features and permissions.`,
+            tech: ["Node.js", "Express.js", "MongoDB", "Next.js", "React.js", "Zustand", "CSS3", "Tawilwind CSS", "Framer Motion"],
+            github: "https://github.com/Ahmed-Ossamaa/skill-up",
+            demo: "https://skill-up-edu.vercel.app/",
+            image: "Skill-Up-SS.PNG"
+        },
+        {
+            title: "El-Mister LMS (Full-Stack)",
+            description: `Full-stack Private Lessons platform.
+            Key technical implementations include JWT auth with role-based authorization (RBAC),
+            Socket.io for real-time Chat between users and Notification system.
+            AI Integration(for C.S), Sripe Payment Integration,OAuth Integration.
+            an optimized video delivery system for lessons, and automated email services for account security.
+            The platform also features 4 Dashboards for instructors,Parents, students, and admins.`,
+            tech: ["Node.js", "Express.js", "MongoDB", "Socket.io", "Next.js", "React.js", "Redux", "CSS3", "Tawilwind CSS", "Framer Motion"],
+            github: ["https://github.com/Ahmed-Ossamaa/lms-elmister-iti-api", "https://github.com/Ahmed-Ossamaa/lms-elmister-iti-ui"],
+            demo: "https://lms-elmister-iti-ui.vercel.app/",
+            image: "El-Mister.PNG"
+        },
+
+        {
             title: "E-Commerce Platform",
-            description: "SPA e-commerce solution with user authentication, Admin dashboard (Management and Stats), using only Vanilla JS. (No Frameworks)",
+            description: "SPA e-commerce with user authentication, Admin dashboard (Management and Stats), using only Vanilla JS. (No Frameworks)",
             tech: ["JS", "HTML5", "CSS3", "Bootstrap"],
             github: "https://github.com/Ahmed-Ossamaa/Ecommerce-ITI-Vanilla-js",
             demo: "https://e-commerce-iti-delta.vercel.app/",
             image: "https://plus.unsplash.com/premium_photo-1664201890375-f8fa405cdb7d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
         },
         {
-            title: "Book Tracker",
-            description: "Book tracking app with full CRUD operations and JWT auth and pagination. Admin Dashboard featuring role-based access control for user and book management",
-            tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS", "cloudinary"],
+            title: "Book Tracker (Full-Stack)",
+            description: "Full-stack Book tracking app with full CRUD operations and JWT auth. Admin Dashboard featuring role-based access control for usesr and book management",
+            tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
             github: "https://github.com/Ahmed-Ossamaa/book-tracker",
             demo: "https://book-tracker-delta-pearl.vercel.app/",
             image: "booktracker.jpeg"
         },
+
         {
-            title: "Skill-up",
-            description: "Learning platform with full CRUD operations and JWT auth and pagination.Admin, Intstuctor, Student Dashboard featuring role-based access control",
-            tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "MUI", "cloudinary"],
-            github: "https://github.com/Ahmed-Ossamaa/skill-up",
-            demo: "#",
-            image: "skillUp.jpg"
-        },
-        {
-            title: "Nala Automotive",
-            description: "Car resale platform with full CRUD operations and JWT auth and pagination.Admin, Intstuctor, Student Dashboard featuring role-based access control",
-            tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS", "React-Query", "Zod", "cloudinary"],
+            title: "Nala Automotive (Full-Stack)",
+            description: "Full-stack Car resale platform with full CRUD operations and JWT auth .Admin Dashboard featuring role-based access control for users and cars management",
+            tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "React-Query"],
+            github: "https://github.com/Ahmed-Ossamaa/Nala-Automotive",
             demo: "https://nala-automotive.vercel.app/",
             image: "Nala-auto.png"
         }

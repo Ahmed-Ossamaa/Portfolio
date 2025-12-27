@@ -1,4 +1,4 @@
-import { FaGithub, FaExternalLinkAlt} from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard = ({ project }) => {
     return (
@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
             <div className="absolute -inset-1  bg-gray-500 rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-500  "></div>
             <div className="relative h-full bg-white dark:bg-gray-900 rounded-xl overflow-hidden">
                 <div className="h-60  flex items-center justify-center relative overflow-hidden">
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                    <img src={project.image} alt={project.title} className="w-full h-full object-fit" />
                 </div>
                 <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
@@ -23,10 +23,24 @@ const ProjectCard = ({ project }) => {
                         ))}
                     </div>
                     <div className="flex space-x-4">
-                        <a href={project.github} className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                            <FaGithub className="w-5 h-5 mr-1" />
-                            Code
-                        </a>
+                        {typeof project.github === 'string' ? (
+                            <a href={project.github} className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                                <FaGithub className="w-5 h-5 mr-1" />
+                                Code
+                            </a>
+
+                        ) :
+                            <>
+                                <a href={project.github[0]} className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                                    <FaGithub className="w-5 h-5 mr-1" />
+                                    FE-Repo
+                                </a>
+                                <a href={project.github[1]} className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                                    <FaGithub className="w-5 h-5 mr-1" />
+                                    BE-Repo
+                                </a>
+                            </>
+                        }
                         <a href={project.demo} className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                             <FaExternalLinkAlt className="w-5 h-5 mr-1" />
                             Demo
@@ -35,7 +49,7 @@ const ProjectCard = ({ project }) => {
                 </div>
             </div>
         </div>
-        
+
     );
 };
 

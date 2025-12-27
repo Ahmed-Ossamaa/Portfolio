@@ -3,9 +3,9 @@ import SkillBar from "./skillBar";
 const SkillsSection = () => {
     const skills = {
         languages: ["JavaScript", "TypeScript"],
-        backend: ["Node.js", "Express.js", "RESTful APIs", "JWT","JOI", "MongoDB", "Mongoose"],
-        frontend: ["HTML5", "React", "Redux Toolkit","NextJS","Angular","Formik", "Yup","Zod"],
-        "UI Libraries": ["CSS3", "Material-UI", "Bootstrap", "Tailwind","Motion", "Chart.js"],
+        backend: ["Node.js", "Express.js", "RESTful APIs","JOI", "MongoDB", "Mongoose"],
+        frontend: ["HTML5","CSS3","NextJS", "React", "Redux Toolkit","Zustand","Formik",],
+        "UI Libraries": [ "Material-UI", "Bootstrap", "Tailwind","Framer Motion", "Chart.js"],
         testing: ["Jest", "Jasmine"],
         tools: ["Git", "GitHub", "VS Code", "Postman"],
     };
