@@ -9,7 +9,7 @@ const AboutSection = () => {
                 <div className="grid sm:grid-cols-1 gap-12 items-center">
                     <div className="text-lg text-gray-800 dark:text-gray-300">
                         <p className=" mb-4">
-                            I'm a passionate full-stack developer with expertise in building modern web applications using the MEARN stack. I love creating efficient, scalable, and user-friendly solutions.
+                            I'm a passionate full-stack developer with expertise in building modern web applications using the MERN stack. I love creating efficient, scalable, and user-friendly solutions.
                         </p>
                         <p className="mb-4">
                             With a strong foundation in both frontend and backend development, I bring ideas to life through clean code and intuitive design.

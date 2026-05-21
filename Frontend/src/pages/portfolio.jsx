@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemContext';
 import Navigation from '../components/nav';
-import HeroSection from '../components/hero';
-import AboutSection from '../components/about';
-import SkillsSection from '../components/skills';
-import ProjectsSection from '../components/myProjects';
-import ContactSection from '../components/contact';
+import HeroSection from '../components/home/hero';
+import AboutSection from '../components/home/about';
+import SkillsSection from '../components/home/skills';
+import ProjectsSection from '../components/home/myProjects';
+import ContactSection from '../components/home/contact';
 import Footer from '../components/footer';
 
 
@@ -31,6 +31,7 @@ export default function Portfolio() {
         <div className={darkMode ? 'dark' : ''}>
             <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
                 <Navigation
+                    sections={['home', 'about', 'skills', 'projects', 'contact']}
                     activeSection={activeSection}
                     scrollToSection={scrollToSection}
                     mobileMenuOpen={mobileMenuOpen}

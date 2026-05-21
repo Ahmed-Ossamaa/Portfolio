@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.skill-track {
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+}
+
+.skill-track:hover {
+  animation-play-state: paused;
+}

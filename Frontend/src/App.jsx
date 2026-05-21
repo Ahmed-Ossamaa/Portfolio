@@ -1,5 +1,7 @@
 import Portfolio from './pages/portfolio'
 import { ThemeProvider } from './context/ThemContext'
+import { Route, Routes } from 'react-router-dom'
+import ProjectDetails from './pages/projectDetails'
 
 function App() {
 
@@ -7,7 +9,10 @@ function App() {
   return (
     <>
       <ThemeProvider>
-        <Portfolio />
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
+        </Routes>
       </ThemeProvider>
     </>
   )
