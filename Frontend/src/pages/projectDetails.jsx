@@ -18,60 +18,63 @@ export default function ProjectDetails() {
     const prevSlide = () => {
         setCurrent((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
     };
-    console.log(project);
 
     return (
         <div className="bg-white dark:bg-gray-900 min-h-screen">
             <Navigation />
 
-            <main className="w-full pt-12 sm:pt-20 pb-12 px-4 sm:px-6">
-                <div className="max-w-5xl mx-auto">
+            <main className="w-full pt-12 sm:pt-20 pb-12 ">
+                <div className="max-w-6xl mx-auto px-4">
 
                     {/* Carousel Container */}
-                    <div className="relative group mb-8 bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg h-[300px] sm:h-[450px] md:h-[550px]">
-                        <div className="flex items-center justify-center  w-full h-full">
-                            <img
-                                src={project.screenshots[current]}
-                                alt={`${project.title} screenshot`}
-                                className="w-full h-full object-contain"
-                            />
+                    <div className="mb-20 max-w-5xl mx-auto">
+                        <div className="relative group bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg  h-[300px] sm:h-[450px] ">
+                            <div className="flex items-center justify-center  w-full h-full">
+                                <img
+                                    src={project.screenshots[current]}
+                                    alt={`${project.title} screenshot`}
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+
+                            {/* Controls */}
+                            {project.screenshots.length > 1 && (
+                                <>
+                                    <button
+                                        onClick={prevSlide}
+                                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/40  text-white p-3 rounded-full  hover:backdrop-blur-sm transition-all "
+                                        aria-label="Previous image"
+                                    >
+                                        <span className="block border-t-2 border-l-2 border-white w-3 h-3 -rotate-45 ml-1"></span>
+                                    </button>
+
+                                    <button
+                                        onClick={nextSlide}
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/40 text-white p-3 rounded-full transition-all hover:backdrop-blur-sm"
+                                        aria-label="Next image"
+                                    >
+                                        <span className="block border-t-2 border-r-2 border-white w-3 h-3 rotate-45 mr-1"></span>
+                                    </button>
+
+
+
+                                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+                                        {project.screenshots.map((_, index) => (
+                                            <div
+                                                key={index}
+                                                className={`h-1.5 rounded-full transition-all ${index === current ? "w-6 bg-purple-500/50" : "w-1.5 bg-gray-400/50"}`}
+                                            />
+                                        ))}
+                                    </div>
+                                </>
+                            )}
                         </div>
-
-                        {/* Controls */}
-                        {project.screenshots.length > 1 && (
-                            <>
-                                <button
-                                    onClick={prevSlide}
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full transition-all backdrop-blur-sm"
-                                    aria-label="Previous image"
-                                >
-                                    <span className="block border-t-2 border-l-2 border-white w-3 h-3 -rotate-45 ml-1"></span>
-                                </button>
-
-                                <button
-                                    onClick={nextSlide}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-3 rounded-full transition-all backdrop-blur-sm"
-                                    aria-label="Next image"
-                                >
-                                    <span className="block border-t-2 border-r-2 border-white w-3 h-3 rotate-45 mr-1"></span>
-                                </button>
-
-
-
-                                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                                    {project.screenshots.map((_, index) => (
-                                        <div
-                                            key={index}
-                                            className={`h-1.5 rounded-full transition-all ${index === current ? "w-6 bg-white" : "w-1.5 bg-white/50"}`}
-                                        />
-                                    ))}
-                                </div>
-                            </>
-                        )}
+                        <p className="text-red-500 text-center text-xs   mt-3">
+                            Note: Some full-page screenshots may appear visually inconsistent due to the fixed sidebar layout.
+                            The sidebar remains static while the main content scrolls,
+                            which may give the impression of misalignment in extended views.
+                        </p>
                     </div>
-
-
-
 
                     {/* Content Section */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -128,47 +131,27 @@ export default function ProjectDetails() {
 
 
                             {/* Demo credentials */}
-                            {project?.credentials?.length > 0 && (
-                                <div className="mt-4 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md">
+                            {project?.credentials && (
+                                <div className="mt-4 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl  shadow-md">
                                     <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                         Demo Access
                                     </p>
-                                    <hr className="border-gray-200 dark:border-gray-700 mb-2" />
+                                    <hr className="border-gray-200 dark:border-gray-700 mb-3" />
 
-                                    {project.credentials.map((cred, index) => (
-                                        <div key={index} className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                                            <div>
-                                                <p>
-                                                    <span className="font-medium text-gray-800 dark:text-gray-200">
-                                                        Admin:
-                                                    </span>
+                                    <div className="text-sm text-gray-600 dark:text-gray-400 space-y-3">
+                                        {Object.entries(project.credentials).map(([role, data]) => (
+                                            <div key={role}>
+                                                <p className="font-medium text-gray-800 dark:text-gray-200">
+                                                    {role}:
                                                 </p>
-                                                <p>Email: {cred.Admin.email}</p>
-                                                <p>Password: {cred.Admin.password}</p>
+                                                <p>Email: {data.email}</p>
+                                                <p>Password: {data.password}</p>
                                             </div>
-                                            <div>
-                                                <p>
-                                                    <span className="font-medium text-gray-800 dark:text-gray-200">
-                                                        Manager:
-                                                    </span>
-                                                </p>
-                                                <p>Email: {cred.Manager.email}</p>
-                                                <p>Password: {cred.Manager.password}</p>
-                                            </div>
-                                            <div>
-                                                <p>
-                                                    <span className="font-medium text-gray-800 dark:text-gray-200">
-                                                        Employee:
-                                                    </span>
-                                                </p>
-                                                <p>Email: {cred.Employee.email}</p>
-                                                <p>Password: {cred.Employee.password}</p>
-                                            </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
 
                                     <p className="text-xs text-red-500 mt-2 text-center">
-                                        *Admin Demo account has restricted actions 
+                                        *Admin Demo account has restricted actions
                                         <br /> (no destructive operations)
                                     </p>
                                 </div>
