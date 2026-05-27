@@ -369,8 +369,14 @@ export const projects = [
         tech: ["React", "Node.js", "Express", "MongoDB", "joi", "Tailwind CSS", "React-Query"],
         github: "https://github.com/Ahmed-Ossamaa/Nala-Automotive",
         demo: "https://nala-automotive.vercel.app/",
-        cover: "/Nala-auto.webp",
-        screenshots: ["/nala/nala-home.webp"],
+        cover: "/nala/home.webp",
+        screenshots: [
+            "/nala/browse-cars.webp", "/nala/car-details.webp",
+            "/nala/admin-overview.webp",
+            "/nala/admin-cars.webp", "/nala/admin-add-car.webp",
+            "/nala/admin-analytics.webp", "/nala/admin-inquiry.webp",
+            "/nala/admin-inquiry-details.webp",
+        ],
         detailedDesc: [
             {
                 title: "Overview",
@@ -403,7 +409,16 @@ export const projects = [
                     "Incorporates best practices such as rate limiting, data sanitization, and secure HTTP headers to protect the platform. The system is optimized for performance and reliability under typical marketplace usage.",
             },
         ],
-        // credentials: [{}]
+        credentials: {
+            Admin: {
+                email: 'demo@admin.com',
+                password: '123456_Ao'
+            },
+            Customer: {
+                email: 'demo@customer.com',
+                password: '123456_Ao'
+            }
+        }
     },
 
 ];
