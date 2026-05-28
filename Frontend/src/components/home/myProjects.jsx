@@ -15,9 +15,6 @@ const ProjectsSection = () => {
                     ))}
                 </div>
             </div>
-            <p className="mt-10 text-center font-medium text-red-500">
-                Note: Some projects have Admin dashboard, you can check the provided Screen Shots in project details page.
-            </p>
         </section>
     );
 };

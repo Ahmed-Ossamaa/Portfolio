@@ -91,8 +91,8 @@ const ProjectCard = ({ project }) => {
                 </a>
             </div>
 
-            {/* 👉 Arrow (still clickable via Link) */}
             <Link
+                title="go to project details"
                 to={`/project/${project.id}`}
                 className="absolute bottom-4 right-4 p-2 rounded-full bg-purple-600 text-white opacity-70 group-hover:opacity-100 hover:scale-110 transition"
             >

@@ -257,7 +257,7 @@ export const projects = [
         demo: "https://e-commerce-iti-delta.vercel.app/",
         cover: "ayaam.webp",
         screenshots: [
-            "/ayaam.webp", "/ayaam/all-prod.webp", "/ayaam/admin-users.webp",
+            "/ayaam/ayaamHome.webp", "/ayaam/all-prod.webp", "/ayaam/admin-users.webp",
             "/ayaam/admin-edit-user.webp", "/ayaam/admin-user-stats.webp",
             "/ayaam/admin-products.webp", "/ayaam/admin-product-details.webp",
             "/ayaam/admin-order-stats.webp", "/ayaam/admin-seller-stats.webp",

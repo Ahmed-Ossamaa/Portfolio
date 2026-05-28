@@ -1,8 +1,25 @@
 import { AiOutlineDownload } from "react-icons/ai";
 import resume from '../../assets/Ahmed-Ossama-Full-stack-Developer-CV.pdf';
-
+import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
+    const [text, setText] = useState('');
+    const fullText = "Full Stack Developer";
+
+    useEffect(() => {
+        let currentIndex = 0;
+        const typingInterval = setInterval(() => {
+            if (currentIndex <= fullText.length) {
+                setText(fullText.slice(0, currentIndex));
+                currentIndex++;
+            } else {
+                clearInterval(typingInterval);
+            }
+        }, 90);
+
+        return () => clearInterval(typingInterval);
+    }, []);
+
     return (
         <section id="home" className="pt-20 pb-20 px-4 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-black dark:via-gray-800 dark:to-black"></div>
@@ -20,8 +37,8 @@ const HeroSection = () => {
                         Ahmed Ossama
                     </span>
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light">
-                    Full Stack Developer | MERN
+                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-semibold h-8 md:h-10">
+                    {text}<span className="animate-blink">|</span>
                 </p>
                 <div className="flex justify-center space-x-4">
                     <a href="#contact" className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold">
@@ -29,7 +46,7 @@ const HeroSection = () => {
                     </a>
                     <a href={resume}
                         download
-                        className="px-6 py-3 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-full  hover:scale-105 transition-all duration-300 font-semibold">
+                        className="px-6 py-3 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-full  hover:scale-105 transition-all duration-300 font-semibold flex items-center gap-2">
                         Download CV
                         <AiOutlineDownload className="inline-block ml-2 w-6 h-6" />
                     </a>
